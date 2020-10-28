@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">App1</string>
+    <string name="add_city">Add city</string>
+    <string name="empty_not_saved">Cidade vazia: não inserida</string>
+    <string name="insertcity">Insira Cidade</string>
+    <string name="insertcountry">Insira País</string>
+</resources>

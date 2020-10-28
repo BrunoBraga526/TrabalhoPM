@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/cidadesPortugal"
+        android:title="Cidades de Portugal"
+        app:showAsAction="never">
+
+    </item>
+
+    <item android:id="@+id/todasCidades"
+        android:title="Todas as Cidades"
+        app:showAsAction="never">
+
+    </item>
+    <item android:id="@+id/getCountryFromAveiro"
+        android:title="Get País de Aveiro"
+        app:showAsAction="never">
+
+    </item>
+    <item android:id="@+id/apagartudo"
+        android:title="Apagar Tudo"
+        app:showAsAction="never">
+
+    </item>
+    <item android:id="@+id/apagarAveiro"
+        android:title="Apagar Aveiro"
+        app:showAsAction="never">
+
+    </item>
+    <item android:id="@+id/alterar"
+        android:title="Alterar"
+        app:showAsAction="never">
+
+    </item>
+    <item android:id="@+id/alteraraveiro"
+        android:title="Alterar Aveiro"
+        app:showAsAction="never">
+
+    </item>
+
+
+</menu>
