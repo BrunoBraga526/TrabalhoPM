@@ -134,13 +134,13 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.alterar -> {
-                val city = City(id = 1, city = "xxx", country = "xxx")
+                val city = City(id = 1, city = "alterado", country = "alterado")
                 cityViewModel.updateCity(city)
                 true
             }
 
             R.id.alteraraveiro -> {
-                cityViewModel.updateCountryFromCity("Aveiro", "Japão")
+                cityViewModel.updateCountryFromCity("Aveiro", "Portugal alterado")
                 true
             }
 
