@@ -9,9 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
-        android:hint="@string/insertcity"
+        android:hint="@string/add_city"
         android:inputType="textAutoComplete"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/country"
@@ -20,14 +20,13 @@
         android:fontFamily="sans-serif-light"
         android:hint="@string/insertcountry"
         android:inputType="textAutoComplete"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/button_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:text="Save"
-    />
+        android:background="@color/colorAccent"
+        android:text="Save" />
 
 </LinearLayout>
