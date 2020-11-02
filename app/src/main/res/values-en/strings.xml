@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">FirstAPP</string>
-    <string name="add_city">Add city</string>
+    <string name="add_nota">Add note</string>
     <string name="empty_not_saved">Needs input: not inserted</string>
-    <string name="insertcity">Insert city</string>
-    <string name="insertcountry">Insert country</string>
+    <string name="insertnota">Insert note</string>
+    <string name="inserttexto">Insert text</string>
 </resources>

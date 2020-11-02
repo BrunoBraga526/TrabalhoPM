@@ -2,29 +2,29 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/cidadesPortugal"
-        android:title="Cidades de Portugal"
+    <item android:id="@+id/textosPortugal"
+        android:title="Textos 'Portugal'"
         app:showAsAction="never">
 
     </item>
 
-    <item android:id="@+id/todasCidades"
-        android:title="Todas as Cidades"
+    <item android:id="@+id/todasNotas"
+        android:title="Todas as Notas"
         app:showAsAction="never">
 
     </item>
-    <item android:id="@+id/getCountryFromAveiro"
-        android:title="Get País de Aveiro"
+    <item android:id="@+id/getTextoFromNota"
+        android:title="Texto de 'Aveiro'"
         app:showAsAction="never">
 
     </item>
     <item android:id="@+id/apagartudo"
-        android:title="Apagar Tudo"
+        android:title="Apagar Todas as Notas"
         app:showAsAction="never">
 
     </item>
     <item android:id="@+id/apagarAveiro"
-        android:title="Apagar Aveiro"
+        android:title="Apagar Notas com 'Aveiro'"
         app:showAsAction="never">
 
     </item>
@@ -34,10 +34,7 @@
 
     </item>
     <item android:id="@+id/alteraraveiro"
-        android:title="Alterar Aveiro"
+        android:title="Alterar notas com 'Aveiro'"
         app:showAsAction="never">
-
     </item>
-
-
 </menu>

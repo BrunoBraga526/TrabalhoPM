@@ -8,26 +8,26 @@ import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
 
-class AddCity : AppCompatActivity() {
+class AddNota : AppCompatActivity() {
 
-    private lateinit var cityText: EditText
-    private lateinit var countryText: EditText
+    private lateinit var notaText: EditText
+    private lateinit var textoText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_city)
+        setContentView(R.layout.activity_add_nota)
 
-        cityText = findViewById(R.id.city)
-        countryText = findViewById(R.id.country)
+        notaText = findViewById(R.id.nota)
+        textoText = findViewById(R.id.texto)
 
         val button = findViewById<Button>(R.id.button_save)
         button.setOnClickListener {
             val replyIntent = Intent()
-            if (TextUtils.isEmpty(cityText.text)) {
+            if (TextUtils.isEmpty(notaText.text)) {
                 setResult(Activity.RESULT_CANCELED, replyIntent)
             } else {
-                replyIntent.putExtra(EXTRA_REPLY_CITY, cityText.text.toString())
-                replyIntent.putExtra(EXTRA_REPLY_COUNTRY, countryText.text.toString())
+                replyIntent.putExtra(EXTRA_REPLY_NOTA, notaText.text.toString())
+                replyIntent.putExtra(EXTRA_REPLY_TEXTO, textoText.text.toString())
                 setResult(Activity.RESULT_OK, replyIntent)
             }
             finish()
@@ -35,7 +35,7 @@ class AddCity : AppCompatActivity() {
     }
 
     companion object {
-        const val EXTRA_REPLY_CITY = "com.example.android.city"
-        const val EXTRA_REPLY_COUNTRY = "com.example.android.country"
+        const val EXTRA_REPLY_NOTA = "com.example.android.nota"
+        const val EXTRA_REPLY_TEXTO = "com.example.android.texto"
     }
 }
