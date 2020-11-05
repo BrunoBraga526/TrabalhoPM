@@ -22,10 +22,13 @@ interface NotasDao {
     @Update
     suspend fun updateNota(nota: Nota)
 
+    @Query("DELETE FROM nota_table WHERE id = :id")
+    fun deleteById(id: Int)
+
     @Query("DELETE FROM nota_table")
     suspend fun deleteAll()
 
-    @Query("DELETE FROM nota_table where nota == :nota")
+    @Query("DELETE FROM nota_table WHERE nota == :nota")
     suspend fun deleteByNota(nota: String)
 
     @Query("UPDATE nota_table SET texto=:texto WHERE nota == :nota")

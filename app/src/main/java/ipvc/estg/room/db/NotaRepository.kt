@@ -3,6 +3,9 @@ package ipvc.estg.room.db
 import androidx.lifecycle.LiveData
 import ipvc.estg.room.dao.NotasDao
 import ipvc.estg.room.entities.Nota
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 // Declares the DAO as a private property in the constructor. Pass in the DAO
 // instead of the whole database, because you only need access to the DAO
@@ -19,7 +22,9 @@ class NotaRepository(private val notaDao: NotasDao) {
     fun getTextoFromNota(nota: String): LiveData<Nota> {
         return notaDao.getTextoFromNota(nota)
     }
-
+    suspend fun deleteById(id: Int) {
+            notaDao.deleteById(id)
+        }
     suspend fun insert(nota: Nota) {
         notaDao.insert(nota)
     }

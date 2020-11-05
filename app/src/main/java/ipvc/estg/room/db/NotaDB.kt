@@ -31,15 +31,15 @@ abstract class NotaDB : RoomDatabase() {
                     var notaDao = database.notaDao()
 
                     // Delete all content here.
-                    notaDao.deleteAll()
+                   // notaDao.deleteAll()
 
-                    // Add sample cities.
+                   /** // Add sample cities.
                     var nota = Nota(1, "Viana do Castelo", "Portugal")
                     notaDao.insert(nota)
                     nota = Nota(2, "Braga", "Portugal")
                     notaDao.insert(nota)
                     nota = Nota(3, "Aveiro", "Portugal")
-                    notaDao.insert(nota)
+                    notaDao.insert(nota) */
 
                 }
             }
@@ -64,7 +64,7 @@ abstract class NotaDB : RoomDatabase() {
                     "notas_database"
                 )
                 //estratégia de destruição
-                .fallbackToDestructiveMigration()
+                //.fallbackToDestructiveMigration()
                 .addCallback(WordDatabaseCallback(scope))
                 .build()
 

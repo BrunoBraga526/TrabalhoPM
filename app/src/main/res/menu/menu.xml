@@ -31,7 +31,11 @@
     <item android:id="@+id/alterar"
         android:title="Alterar"
         app:showAsAction="never">
+    </item>
 
+    <item android:id="@+id/editbyid"
+        android:title="Editar por ID"
+        app:showAsAction="never">
     </item>
     <item android:id="@+id/alteraraveiro"
         android:title="Alterar notas com 'Aveiro'"
