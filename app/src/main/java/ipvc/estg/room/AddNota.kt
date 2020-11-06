@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
-
+import java.util.*
 class AddNota : AppCompatActivity() {
 
     private lateinit var notaText: EditText
@@ -26,6 +26,8 @@ class AddNota : AppCompatActivity() {
             if (TextUtils.isEmpty(notaText.text)) {
                 setResult(Activity.RESULT_CANCELED, replyIntent)
             } else {
+                val nota  = notaText.text.toString()
+                val texto = textoText.text.toString()
                 replyIntent.putExtra(EXTRA_REPLY_NOTA, notaText.text.toString())
                 replyIntent.putExtra(EXTRA_REPLY_TEXTO, textoText.text.toString())
                 setResult(Activity.RESULT_OK, replyIntent)

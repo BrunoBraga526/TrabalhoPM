@@ -20,8 +20,8 @@ class NotaViewModel(application: Application) : AndroidViewModel(application) {
     val allNotas: LiveData<List<Nota>>
 
     init {
-        val citiesDao = NotaDB.getDatabase(application, viewModelScope).notaDao()
-        repository = NotaRepository(citiesDao)
+        val notasDao = NotaDB.getDatabase(application, viewModelScope).notaDao()
+        repository = NotaRepository(notasDao)
         allNotas = repository.allNotas
     }
 
@@ -37,24 +37,11 @@ class NotaViewModel(application: Application) : AndroidViewModel(application) {
         repository.deleteAll()
     }
 
-    // delete by city
-    fun deleteByNota(nota: String) = viewModelScope.launch(Dispatchers.IO) {
-        repository.deleteByNota(nota)
-    }
-
-    fun getNotaByTexto(country: String): LiveData<List<Nota>> {
-        return repository.getNotasByTexto(country)
-    }
-
-    fun getTextoFromNota(nota: String): LiveData<Nota> {
-        return repository.getTextoFromNota(nota)
-    }
-
     fun updateNota(nota: Nota) = viewModelScope.launch {
         repository.updateNota(nota)
     }
-
-    fun updateTextoFromNota(nota: String, texto: String) = viewModelScope.launch {
-        repository.updateTextoFromNota(nota, texto)
+    fun deleteNota(nota: Nota) = viewModelScope.launch{
+        repository.deleteNota(nota)
     }
+
 }
