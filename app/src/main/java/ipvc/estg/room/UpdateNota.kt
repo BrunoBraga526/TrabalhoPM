@@ -17,6 +17,7 @@ class UpdateNota : AppCompatActivity(){
         notaText = findViewById(R.id.editar_nota)
         textoText = findViewById(R.id.editar_texto)
 
+        //recolhe os valores associados ao
         val intent = intent
         notaText.setText( intent.getStringExtra(EXTRA_REPLY_NOTA) )
         textoText.setText( intent.getStringExtra(EXTRA_REPLY_TEXTO) )

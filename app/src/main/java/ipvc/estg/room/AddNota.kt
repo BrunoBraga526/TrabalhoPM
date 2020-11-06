@@ -9,17 +9,19 @@ import android.widget.Button
 import android.widget.EditText
 import java.util.*
 class AddNota : AppCompatActivity() {
-
+    //declaração de varáveis
     private lateinit var notaText: EditText
     private lateinit var textoText: EditText
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_nota)
-
+        //associa a nota e o texto ao ID
         notaText = findViewById(R.id.nota)
         textoText = findViewById(R.id.texto)
 
+        //Botao de edição, deteção de alterações e caso existam empurra os valores para a intent
         val button = findViewById<Button>(R.id.button_save)
         button.setOnClickListener {
             val replyIntent = Intent()

@@ -63,7 +63,6 @@ abstract class NotaDB : RoomDatabase() {
                     NotaDB::class.java,
                     "notas_database"
                 )
-                //estratégia de destruição
                 //.fallbackToDestructiveMigration()
                 .addCallback(WordDatabaseCallback(scope))
                 .build()

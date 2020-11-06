@@ -6,7 +6,7 @@ import ipvc.estg.room.entities.Nota
 
 @Dao
 interface NotasDao {
-
+    //Queries SQLite
     @Query("SELECT * from nota_table ORDER BY nota ASC")
     fun getAllNotas(): LiveData<List<Nota>>
 

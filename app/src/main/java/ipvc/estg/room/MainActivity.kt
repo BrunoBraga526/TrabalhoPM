@@ -22,8 +22,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), NotaAdapter.OnItemClickListener {
 
     private lateinit var notaViewModel: NotaViewModel
-    private val newWordActivityRequestCode = 1
-    private val UpdateActivityRequestCode = 2
+    private val newWordActivityRequestCode = 1 //AddNota = RC 1
+    private val UpdateActivityRequestCode = 2 //UpdateNota = RC 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,13 +42,14 @@ class MainActivity : AppCompatActivity(), NotaAdapter.OnItemClickListener {
             notas?.let { adapter.setNotas(it) }
         })
 
-        //Fab
+        //Botao para chamar a atividade AddNota
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener {
             val intent = Intent(this@MainActivity, AddNota::class.java)
             startActivityForResult(intent, newWordActivityRequestCode)
         }
 
+        //função para permitir apagar uma nota com swipe
         val itemTouchHelperCallback = object: ItemTouchHelper.SimpleCallback( 0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT ) {
             override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
                 return false
@@ -63,6 +64,7 @@ class MainActivity : AppCompatActivity(), NotaAdapter.OnItemClickListener {
         itemTouchHelper.attachToRecyclerView( recyclerview )
     }
 
+    //Recolhe os valores da nota a ser alterada
     override fun onItemClicked(nota: Nota ) {
         val intent = Intent( this, UpdateNota::class.java)
         intent.putExtra(UpdateNota.EXTRA_ID, nota.id)
@@ -71,6 +73,8 @@ class MainActivity : AppCompatActivity(), NotaAdapter.OnItemClickListener {
         startActivityForResult(intent, UpdateActivityRequestCode)
     }
 
+    //Recolha dos valores a inserir nos campos e validação da existencia de conteudo
+    //Se não existe, toast a avisar
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -103,13 +107,14 @@ class MainActivity : AppCompatActivity(), NotaAdapter.OnItemClickListener {
         }
     }
 
-
+    //Inflater do menu
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.menu, menu)
         return true
     }
 
+    //Menu de opções
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle item selection
         return when (item.itemId) {
