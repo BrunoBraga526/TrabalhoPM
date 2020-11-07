@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import ipvc.estg.room.R
 import ipvc.estg.room.entities.Nota
 
+
 class NotaAdapter internal constructor(
-        context: Context, val itemClickListener: OnItemClickListener
+    context: Context, private val itemClickListener: OnItemClickListener
 ) : RecyclerView.Adapter<NotaAdapter.NotaViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
@@ -30,11 +31,12 @@ class NotaAdapter internal constructor(
             }
         }
     }
+    //definição do layout que apresenta a listagem de notas
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotaViewHolder {
         val itemView = inflater.inflate(R.layout.recyclerview_item, parent, false)
         return NotaViewHolder(itemView)
     }
-
+    //Ordenação das notas no array
     override fun onBindViewHolder(holder: NotaViewHolder, position: Int) {
         val current = notas[position]
         holder.notaItemView.text = current.nota
@@ -42,7 +44,7 @@ class NotaAdapter internal constructor(
 
         holder.bind(current, itemClickListener)
     }
-
+    //GETPOS do array notas passa o parametro position
     fun getPosicaoNota(position: Int): Nota {
         return notas[position]
     }
@@ -51,9 +53,9 @@ class NotaAdapter internal constructor(
         this.notas = notas
         notifyDataSetChanged()
     }
-
+    //interface para o click numa nota
     interface OnItemClickListener {
         fun onItemClicked(nota: Nota)
     }
-    override fun getItemCount() = notas.size
+    override fun getItemCount() = notas.size //Contador do tamanho do array notas
 }

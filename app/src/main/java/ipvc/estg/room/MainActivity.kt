@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity(), NotaAdapter.OnItemClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // recycler view
+        // recycler view e definiçao do adapter
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         val adapter = NotaAdapter(this, this)
         recyclerView.adapter = adapter
@@ -58,7 +58,6 @@ class MainActivity : AppCompatActivity(), NotaAdapter.OnItemClickListener {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 notaViewModel.deleteNota( adapter.getPosicaoNota(viewHolder.adapterPosition) )
             }
-
         }
         val itemTouchHelper = ItemTouchHelper( itemTouchHelperCallback )
         itemTouchHelper.attachToRecyclerView( recyclerview )
@@ -73,8 +72,8 @@ class MainActivity : AppCompatActivity(), NotaAdapter.OnItemClickListener {
         startActivityForResult(intent, UpdateActivityRequestCode)
     }
 
-    //Recolha dos valores a inserir nos campos e validação da existencia de conteudo
-    //Se não existe, toast a avisar
+    //Recolha dos valores inseridos nos campos e validação da existencia de conteudo
+    //Se não existe, toast
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -92,18 +91,21 @@ class MainActivity : AppCompatActivity(), NotaAdapter.OnItemClickListener {
                 R.string.empty_not_saved,
                 Toast.LENGTH_LONG).show()
         }
+        //Atividade de ediçao de dados das notas
+        //Recolhe as alterações dos campos pnota e ptexto e chama a função updateNota com esses valores
+        //vlaidação caixa vazia
         if (requestCode == UpdateActivityRequestCode && resultCode == RESULT_OK) {
             val id = data?.getIntExtra( UpdateNota.EXTRA_ID, -1 )
 
-            val titulo = data?.getStringExtra( UpdateNota.EXTRA_REPLY_NOTA).toString()
-            val texto = data?.getStringExtra( UpdateNota.EXTRA_REPLY_TEXTO).toString()
-            val nota = Nota(id,titulo,texto)
+            val pnota = data?.getStringExtra( UpdateNota.EXTRA_REPLY_NOTA).toString()
+            val ptexto = data?.getStringExtra( UpdateNota.EXTRA_REPLY_TEXTO).toString()
+            val nota = Nota(id,pnota,ptexto)
 
             notaViewModel.updateNota(nota)
             Toast.makeText(applicationContext,"Nota Editada",Toast.LENGTH_LONG).show()
         }
-        else if(requestCode == UpdateActivityRequestCode) {
-            Toast.makeText(applicationContext,R.string.empty_not_saved,Toast.LENGTH_LONG).show()
+        else {
+            Toast.makeText(applicationContext,R.string.empty_not_saved1,Toast.LENGTH_LONG).show()
         }
     }
 

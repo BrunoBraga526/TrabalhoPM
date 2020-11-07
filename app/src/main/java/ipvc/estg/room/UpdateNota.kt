@@ -22,6 +22,7 @@ class UpdateNota : AppCompatActivity(){
         notaText.setText( intent.getStringExtra(EXTRA_REPLY_NOTA) )
         textoText.setText( intent.getStringExtra(EXTRA_REPLY_TEXTO) )
         val id = intent.getIntExtra( EXTRA_ID , -1)
+
         val button = findViewById<Button>(R.id.botao_guardar)
         button.setOnClickListener {
             val replyIntent = Intent()

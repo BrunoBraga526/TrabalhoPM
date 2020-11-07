@@ -4,4 +4,5 @@
     <string name="empty_not_saved">Escreva algo neste campo: não inserido</string>
     <string name="insertnota">Insira Nota</string>
     <string name="inserttexto">Insira Texto</string>
+    <string name="empty_not_saved1">Não gravado vazio (edit)</string>
 </resources>
