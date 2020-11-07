@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
-import java.util.*
+
 class AddNota : AppCompatActivity() {
     //declaração de varáveis
     private lateinit var notaText: EditText
