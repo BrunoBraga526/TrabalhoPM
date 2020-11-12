@@ -31,11 +31,13 @@ class NotaAdapter internal constructor(
             }
         }
     }
+
     //definição do layout que apresenta a listagem de notas
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotaViewHolder {
         val itemView = inflater.inflate(R.layout.recyclerview_item, parent, false)
         return NotaViewHolder(itemView)
     }
+
     //Ordenação das notas no array
     override fun onBindViewHolder(holder: NotaViewHolder, position: Int) {
         val current = notas[position]
@@ -44,6 +46,7 @@ class NotaAdapter internal constructor(
 
         holder.bind(current, itemClickListener)
     }
+
     //GETPOS do array notas passa o parametro position
     fun getPosicaoNota(position: Int): Nota {
         return notas[position]
@@ -54,9 +57,11 @@ class NotaAdapter internal constructor(
         this.notas = notas
         notifyDataSetChanged()
     }
+
     //interface para o click numa nota
     interface OnItemClickListener {
         fun onItemClicked(nota: Nota)
     }
+
     override fun getItemCount() = notas.size //Contador do tamanho do array notas
 }
