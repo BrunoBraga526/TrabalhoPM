@@ -49,6 +49,7 @@ class NotaAdapter internal constructor(
         return notas[position]
     }
 
+    //aviso ao notaViewModel que os dados foram alterados para atualização da GUI
     internal fun setNotas(notas: List<Nota>) {
         this.notas = notas
         notifyDataSetChanged()

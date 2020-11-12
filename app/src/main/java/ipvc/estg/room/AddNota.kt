@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 
 class AddNota : AppCompatActivity() {
-    //declaração de varáveis
+    //declaração de variáveis
     private lateinit var notaText: EditText
     private lateinit var textoText: EditText
 
@@ -21,7 +21,7 @@ class AddNota : AppCompatActivity() {
         notaText = findViewById(R.id.nota)
         textoText = findViewById(R.id.texto)
 
-        //Botao de edição, deteção de alterações e caso existam empurra os valores para a intent
+        //Botao de adição, deteção de alterações se esta vazio rejeita
         val button = findViewById<Button>(R.id.button_save)
         button.setOnClickListener {
             val replyIntent = Intent()
