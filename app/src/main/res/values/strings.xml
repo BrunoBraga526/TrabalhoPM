@@ -1,8 +1,4 @@
 <resources>
-    <string name="app_name">Primeira App</string>
-    <string name="add_nota">Adicionar nota</string>
-    <string name="empty_not_saved">Escreva algo neste campo: não inserido</string>
-    <string name="insertnota">Insira Nota</string>
-    <string name="inserttexto">Insira Texto</string>
-    <string name="empty_not_saved1">Não gravado vazio (edit)</string>
+    <string name="app_name">retrofit</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
