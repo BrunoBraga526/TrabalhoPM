@@ -4,5 +4,21 @@
     <string name="empty_not_saved">Escreva algo neste campo: não inserido</string>
     <string name="insertnota">Insira Nota</string>
     <string name="inserttexto">Insira Texto</string>
-    <string name="empty_not_saved1">Não gravado vazio (edit)</string>
+    <string name="preference_file_key" translatable="false">preference_file_key</string>
+    <string name="keeper_loginauto_valida" translatable="false">automatic_login_check</string>
+    <string name="passwordlabel" translatable="false">Palavra-passe</string>
+    <string name="usernamelabel" translatable="false">Utilizador</string>
+    <string name="keeper_loginauto_utilizador" translatable="false">automatic_login_username</string>
+    <string name="keeper_loginauto_palavrapasse" translatable="false">automatic_login_password</string>
+    <string name="logoutlabel" translatable="false">Logout</string>
+    <string name="loginlabel" translatable="false">Login</string>
+    <string name="shownoteslabel">APP NOTAS</string>
+    <string name="fieldusernameemptylabel">Campo utilizador vazio</string>
+    <string name="fieldpasswordemptylabel">Campo password vazio</string>
+    <string name="logincorrectlabel">Login com sucesso</string>
+    <string name="loginincorrectlabel">Login falhou</string>
+    <string name="empty_not_saved1">Edição vazia, não gravado</string>
+    <string name="title_activity_atividade_mapa">Mapa Reports</string>
+
+
 </resources>
