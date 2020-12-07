@@ -5,3 +5,11 @@ data class Output_Login (
         val utilizador: String, //campo utilizador
         val resposta:String //resposta da API
 )
+
+data class Output_Problema(
+        val sucesso: Boolean
+)
+
+data class Tipo(
+        val nome: String
+)

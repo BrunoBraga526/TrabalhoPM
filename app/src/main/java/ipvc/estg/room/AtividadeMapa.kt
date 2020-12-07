@@ -61,12 +61,12 @@ class AtividadeMapa : AppCompatActivity(), OnMapReadyCallback {
     //opções do menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.new_marker_btn -> { //botao para novo marcador, criar posicionamento auto, ligar os problemas aqui
+            R.id.botao_novo_marcador -> { //botao para novo marcador, criar posicionamento auto, ligar os problemas aqui
                 true
             }
 
             //botao logout insere valores null nos campos, torna o check falso para nao iniciar o login automatico
-            R.id.logout_btn -> {
+            R.id.botao_logout -> {
                 val sharedPref: SharedPreferences = getSharedPreferences(
                     getString(R.string.preference_file_key), Context.MODE_PRIVATE )
                 with ( sharedPref.edit() ) {

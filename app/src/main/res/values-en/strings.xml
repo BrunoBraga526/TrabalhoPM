@@ -6,10 +6,12 @@
     <string name="insertnota">Insert note</string>
     <string name="inserttexto">Insert text</string>
     <string name="shownoteslabel">Notes app</string>
-    <string name="fieldusernameemptylabel">User field empty</string>
-    <string name="fieldpasswordemptylabel">Password field empty</string>
+    <string name="campo_utilizador_vazio">User field empty</string>
+    <string name="campo_password_vazio">Password field empty</string>
     <string name="logincorrectlabel">Successfull login</string>
     <string name="loginincorrectlabel">Failed login</string>
     <string name="empty_not_saved1">Edit empty, not saved</string>
     <string name="title_activity_atividade_mapa">Report Map</string>
+    <string name="markercorrectlabel">Marker inserted</string>
+    <string name="markerincorrectlabel">Marker not inserted</string>
 </resources>

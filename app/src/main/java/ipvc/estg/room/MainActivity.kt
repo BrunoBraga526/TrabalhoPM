@@ -51,11 +51,11 @@ class MainActivity : AppCompatActivity() {
 
         //validação dos campos de login (isempty???)
         if ( TextUtils.isEmpty(utilizador) ) {
-            Toast.makeText(this, R.string.fieldusernameemptylabel, Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.campo_utilizador_vazio, Toast.LENGTH_LONG).show()
             return
         }
         else if ( TextUtils.isEmpty(palavrapasse) ) {
-            Toast.makeText(this, R.string.fieldpasswordemptylabel, Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.campo_password_vazio, Toast.LENGTH_LONG).show()
             return
         }
         else {
@@ -81,13 +81,13 @@ class MainActivity : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
 
-                            //keeper dos dados do utilizador caso este esteja logado para login automatico emshared preferences
+                            //keeper dos dados do utilizador caso este esteja logado para login automatico em shared preferences
                             val sharedPref: SharedPreferences = getSharedPreferences(
                                 getString(R.string.preference_file_key), Context.MODE_PRIVATE )
                             with ( sharedPref.edit() ) {
                                 putBoolean(getString(R.string.keeper_loginauto_valida), true)
                                 putString(getString(R.string.keeper_loginauto_utilizador), utilizador )
-                                putString(getString(R.string.keeper_loginauto_palavrapasse), palavrapasse )
+                               // putString(getString(R.string.keeper_loginauto_palavrapasse), palavrapasse )
                                 commit()
                             }
 
