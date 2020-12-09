@@ -1,5 +1,6 @@
 package ipvc.estg.room.entities
 
+//classe que guarda os valores a preencher na BD
 data class Problema(
 
     val id: Int,

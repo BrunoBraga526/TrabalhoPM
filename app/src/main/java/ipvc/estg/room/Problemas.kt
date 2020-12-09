@@ -33,20 +33,24 @@ class Problemas : AppCompatActivity() {
             val sharedPref: SharedPreferences = getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE )
 
+
+            //inicia variaveis e realiza as calls para popular o mapa
             val utilizador: String = sharedPref.getString(getString(R.string.automatic_login_username), null)!!
             var tipo=String()
             val intent = intent
+            //popula com os valores retirados dos companions
             val id = intent.getStringExtra(EXTRA_MENSAGEM)
             val latitude = intent.getStringExtra(EXTRA_LATITUDE)
             val longitude = intent.getStringExtra(EXTRA_LONGITUDE)
             val call_id= id?.toInt()
             val request = Servicos.buildServico(PostLogin::class.java)
+            //define a call para receber os problemas da API
             val call = request.getProblema(call_id!!)
             call.enqueue(object : Callback<List<Problema>> {
                 override fun onResponse(call: Call<List<Problema>>, response: Response<List<Problema>>) {
                     if (response.isSuccessful) {
                         val c = response.body()!!
-                        for (problema in c) {
+                        for (problema in c) { //percorre os problemas e os que utilizador = utilizador criou problema, aponta xml do dono
                             if (problema.utilizador.equals(utilizador)) {
                                 setContentView(R.layout.atividade_problema_dono)
                                 editar_descricao_problema = findViewById(R.id.editar_problema)
@@ -58,15 +62,20 @@ class Problemas : AppCompatActivity() {
                                 editar_longitude_problema.text = problema.longitude
                                 editar_tipo_problema.text = problema.tipo
 
+                                //botao para alterar a localização
                                 val local = findViewById<Button>(R.id.botao_localizacao)
                                 local.setOnClickListener {
                                     editar_latitude_problema.text = latitude
                                     editar_longitude_problema.text = longitude
                                 }
+
+                                //botao para alterar o tipo pelo que está no dropdown
                                 val type = findViewById<Button>(R.id.botao_tipo)
                                 type.setOnClickListener {
                                     editar_tipo_problema.text = tipo
                                 }
+
+                                //dropdown dos tipos de problemas definidos nas strings
                                 val types = resources.getStringArray(R.array.TiposProblema)
                                 val spinner = findViewById<Spinner>(R.id.dropdown1)
                                 if (spinner != null) {
@@ -86,6 +95,7 @@ class Problemas : AppCompatActivity() {
                                         }
                                     }
                                 }
+                                //chama a api para guardar os valores dos campos de texto/ seleçoes na BD
                                 val save = findViewById<Button>(R.id.botao_guardar)
                                 save.setOnClickListener {
                                     val callid = id?.toInt()

@@ -16,4 +16,7 @@
     <string name="botao_guardar">Save</string>
     <string name="texto_marcador">Marker Description</string>
     <string name="createuserlabel">Create user</string>
+    <string name="botao_apagar">DELETE</string>
+    <string name="criacao_falhou">User not created</string>
+    <string name="criacao_sucesso">User created</string>
 </resources>

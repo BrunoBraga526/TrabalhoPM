@@ -25,6 +25,8 @@
     <string name="automatic_login_check" translatable="false">automatic_login_check</string>
     <string name="automatic_login_username" translatable="false">automatic_login_username</string>
     <string name="botao_apagar">APAGAR</string>
+    <string name="criacao_falhou">Utilizador não criado</string>
+    <string name="criacao_sucesso">Criação com sucesso</string>
 
 
     <string-array name="TiposProblema">

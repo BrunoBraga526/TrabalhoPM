@@ -9,7 +9,3 @@ data class Output_Login (
 data class Output_Problema(
         val sucesso: Boolean
 )
-
-data class Tipo(
-        val nome: String
-)

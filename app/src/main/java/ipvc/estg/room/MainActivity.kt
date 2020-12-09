@@ -99,6 +99,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
     fun criar_utilizador(view: View) {
+        //recebe os valores dos campos de texto
         val utilizador = utilizadorEditTextView.text.toString()
         val palavrapasse = palavrapasseEditTextView.text.toString().sha256()
 
@@ -111,9 +112,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-
-
-
+        //chama a API para criar utilizador com os dados recebidos acima
         val request = Servicos.buildServico(PostLogin::class.java)
         val call = request.postcriar(
             utilizador,
@@ -125,7 +124,7 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val c: Output_Login = response.body()!!
                     if (c.sucesso) {
-                        Toast.makeText(this@MainActivity,R.string.login_correto,Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@MainActivity,R.string.criacao_sucesso,Toast.LENGTH_SHORT).show()
                         val sharedPref: SharedPreferences = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE )
                         with ( sharedPref.edit() ) {
                             putBoolean(getString(R.string.automatic_login_check), true)
@@ -136,7 +135,7 @@ class MainActivity : AppCompatActivity() {
                         val intent = Intent(this@MainActivity, AtividadeMapa::class.java)
                         startActivity(intent)
                         finish()
-                    } else Toast.makeText(this@MainActivity,R.string.login_incorreto,Toast.LENGTH_SHORT).show()
+                    } else Toast.makeText(this@MainActivity,R.string.criacao_falhou,Toast.LENGTH_SHORT).show()
                 }
             }
             override fun onFailure(call: Call<Output_Login>, t: Throwable) {

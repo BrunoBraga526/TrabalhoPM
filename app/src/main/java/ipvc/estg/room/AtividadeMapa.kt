@@ -46,7 +46,7 @@ class AtividadeMapa : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         val request = Servicos.buildServico(PostLogin::class.java)
-        val call = request.getProblemas()
+        val call = request.getProblemas() //pede a API os problemas da BD
         var position: LatLng
 
         call.enqueue(object : Callback<List<Problema>> {
@@ -115,6 +115,7 @@ class AtividadeMapa : AppCompatActivity(), OnMapReadyCallback {
 
                 }
             }}}
+    //botao para criar marcador chama os companions de NovoMarcador e envia a latitude e longitude correntes para o companion
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.botao_novo_marcador -> {
@@ -125,6 +126,8 @@ class AtividadeMapa : AppCompatActivity(), OnMapReadyCallback {
                 startActivity(intent)
                 true
             }
+
+            //passa os valores do login automatico a false e null e manda para a atividade principal
             R.id.botao_logout -> {
                 val sharedPref: SharedPreferences = getSharedPreferences(
                     getString(R.string.preference_file_key), Context.MODE_PRIVATE)

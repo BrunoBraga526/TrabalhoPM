@@ -21,6 +21,7 @@ class NovoMarcador : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.atividade_novomarcador)
 
+        //declaração das variaveis
         val sharedPref: SharedPreferences = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE)
         val utilizador:String? = sharedPref.getString("automatic_login_username", null)
         var tipo = String()
@@ -30,6 +31,7 @@ class NovoMarcador : AppCompatActivity() {
         val descricao = criarMarcadorView.text
         val tipos = resources.getStringArray(R.array.TiposProblema)
 
+        //dropdown para seleção do tipo de problema
         val spinner = findViewById<Spinner>(R.id.dropdown_novo_marcador)
         if (spinner != null) {
             val adapter = ArrayAdapter(this,
@@ -46,6 +48,8 @@ class NovoMarcador : AppCompatActivity() {
                 }
             }
         }
+
+        //botao para guardar chama a API para recolher os dados para a tabela da DB
         val button = findViewById<Button>(R.id.botao_guardar)
         button.setOnClickListener {
             val request = Servicos.buildServico(PostLogin::class.java)
@@ -79,6 +83,8 @@ class NovoMarcador : AppCompatActivity() {
         }
 
     }
+
+    //companion para partilha da latitude e da longitude
     companion object {
         const val EXTRA_LAT = "com.example.android.wordlistsql.LAT"
         const val EXTRA_LON = "com.example.android.wordlistsql.LON"
