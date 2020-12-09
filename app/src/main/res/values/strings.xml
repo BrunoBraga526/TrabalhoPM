@@ -8,8 +8,8 @@
     <string name="keeper_loginauto_valida" translatable="false">loginauto_valida</string>
     <string name="passwordlabel" translatable="false">Palavra-passe</string>
     <string name="usernamelabel" translatable="false">Utilizador</string>
-    <string name="keeper_loginauto_utilizador" translatable="false">loginauto_utilizador</string>
-    <string name="keeper_loginauto_palavrapasse" translatable="false">loginauto_palavrapasse</string>
+    <string name="keeper_loginauto_utilizador" translatable="false">keeper_loginauto_utilizador</string>
+    <string name="keeper_loginauto_palavrapasse" translatable="false">keeper_loginauto_palavrapasse</string>
     <string name="logoutlabel" translatable="false">Logout</string>
     <string name="loginlabel" translatable="false">Login</string>
     <string name="shownoteslabel">APP NOTAS</string>
@@ -19,15 +19,16 @@
     <string name="loginincorrectlabel">Login falhou</string>
     <string name="empty_not_saved1">Edição vazia, não gravado</string>
     <string name="title_activity_atividade_mapa">Mapa Reports</string>
-    <string name="markercorrectlabel">Marcador inserido</string>
-    <string name="markerincorrectlabel">marcador nao inserido</string>
-    <string name="marker_texto">marker_texto</string>
-    <string name="btnsave">Guardar</string>
+    <string name="marcador_inserido">Marcador inserido</string>
+    <string name="marcador_nao_inserido">marcador nao inserido</string>
+    <string name="botao_guardar">Guardar</string>
+    <string name="texto_marcador">Descrição</string>
+    <string name="createuserlabel">Criar utilizador</string>
 
     <string-array name="TiposProblema">
+        <item>Acidente Grave</item>
+        <item>Acidente Ligeiro</item>
         <item>Obras</item>
-        <item>Acidente</item>
-        <item>Outro</item>
     </string-array>
 
 

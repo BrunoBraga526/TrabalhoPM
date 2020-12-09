@@ -22,7 +22,7 @@ class AddNota : AppCompatActivity() {
         textoText = findViewById(R.id.texto)
 
         //Botao de adição, deteção de alterações se esta vazio rejeita
-        val button = findViewById<Button>(R.id.button_save)
+        val button = findViewById<Button>(R.id.botao_guardar)
         button.setOnClickListener {
             val replyIntent = Intent()
             if (TextUtils.isEmpty(notaText.text)) {

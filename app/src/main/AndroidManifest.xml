@@ -41,6 +41,7 @@
         </activity>
         <activity android:name=".UpdateNota" />
         <activity android:name=".AddNota" />
+        <activity android:name=".NovoMarcador" />
         <activity android:name=".Nota_MainActivity">
 
         </activity>

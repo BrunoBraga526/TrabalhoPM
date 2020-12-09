@@ -1,14 +1,13 @@
 package ipvc.estg.room
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import ipvc.estg.room.*
 import ipvc.estg.room.API_Login.PostLogin
 import retrofit2.Call
 import retrofit2.Callback
@@ -16,47 +15,48 @@ import retrofit2.Response
 
 
 
+
 class NovoMarcador : AppCompatActivity() {
+
     private lateinit var createmarkerView: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.atividade_novomarcador)
         var tipo = String();
-        var posicao_corrente: String;
-        val sharedPref: SharedPreferences = getSharedPreferences(getString(R.string.preference_file_key), MODE_PRIVATE)
+        val sharedPref: SharedPreferences = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE)
         var utilizador:String? = sharedPref.getString("automatic_login_username", null)
-        var foto="/URL/HELLO"
-        val date= intent.getStringExtra(EXTRA_LOCAL)
-        posicao_corrente= date.toString();
+        val latitude= intent.getStringExtra(EXTRA_LAT).toString()
+        val longitude= intent.getStringExtra(EXTRA_LON).toString()
         createmarkerView = findViewById(R.id.marker_texto)
         val texto = createmarkerView.text
-        val tipos = resources.getStringArray(R.array.TiposProblema)
-        val spinner = findViewById<Spinner>(R.id.dropdown1)
+        val types = resources.getStringArray(R.array.TiposProblema)
+
+        val spinner = findViewById<Spinner>(R.id.dropdown_novo_marcador)
         if (spinner != null) {
             val adapter = ArrayAdapter(this,
-                android.R.layout.simple_spinner_item, tipos)
+                android.R.layout.simple_spinner_item, types)
             spinner.adapter = adapter
 
             spinner.onItemSelectedListener = object :
                 AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>,
                                             view: View, position: Int, id: Long) {
-                    tipo=tipos[position]
+                    tipo=types[position]
                 }
                 override fun onNothingSelected(parent: AdapterView<*>) {
                 }
             }
         }
-        val button = findViewById<Button>(R.id.button_save)
+        val button = findViewById<Button>(R.id.botao_guardar)
         button.setOnClickListener {
             val request = Servicos.buildServico(PostLogin::class.java)
-            val call = request.create(
+            val call = request.criarProblema(
                 utilizador.toString(),
                 tipo,
                 texto,
-                posicao_corrente,
-                foto
+                latitude,
+                longitude
 
             )
             call.enqueue(object : Callback<Output_Problema> {
@@ -65,11 +65,11 @@ class NovoMarcador : AppCompatActivity() {
                     if (response.isSuccessful) {
                         val c: Output_Problema = response.body()!!
                         if (c.sucesso) {
-                            Toast.makeText(this@NovoMarcador,R.string.markercorrectlabel,Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@NovoMarcador,R.string.marcador_inserido,Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@NovoMarcador, AtividadeMapa::class.java)
                             startActivity(intent)
                             finish()
-                        } else Toast.makeText(this@NovoMarcador,R.string.markerincorrectlabel,Toast.LENGTH_SHORT).show()
+                        } else Toast.makeText(this@NovoMarcador,R.string.marcador_nao_inserido,Toast.LENGTH_SHORT).show()
                     }
                 }
                 override fun onFailure(call: Call<Output_Problema>, t: Throwable) {
@@ -82,6 +82,7 @@ class NovoMarcador : AppCompatActivity() {
 
     }
     companion object {
-        const val EXTRA_LOCAL = "com.example.android.wordlistsql.LOCAL"
+        const val EXTRA_LAT = "com.example.android.wordlistsql.LAT"
+        const val EXTRA_LON = "com.example.android.wordlistsql.LON"
     }
 }

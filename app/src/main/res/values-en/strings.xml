@@ -12,6 +12,9 @@
     <string name="loginincorrectlabel">Failed login</string>
     <string name="empty_not_saved1">Edit empty, not saved</string>
     <string name="title_activity_atividade_mapa">Report Map</string>
-    <string name="markercorrectlabel">Marker inserted</string>
-    <string name="markerincorrectlabel">Marker not inserted</string>
+    <string name="marcador_inserido">Marker inserted</string>
+    <string name="marcador_nao_inserido">Marker not inserted</string>
+    <string name="botao_guardar">Save</string>
+    <string name="texto_marcador">Marker Description</string>
+    <string name="createuserlabel">Create user</string>
 </resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/viewticket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:hint="Descrição"
+        android:inputType="textAutoComplete"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/problema"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:hint="Descrição"
+        android:inputType="textAutoComplete"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/viewlat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:hint="Latitude"
+        android:inputType="textAutoComplete"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/latitude_naodono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:hint="Latitude"
+        android:inputType="textAutoComplete"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/viewlon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:hint="Longitude"
+        android:inputType="textAutoComplete"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/longitude_naodono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:hint="Longitude"
+        android:inputType="textAutoComplete"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/viewtipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:hint="Tipo"
+        android:inputType="textAutoComplete"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:hint="Tipo"
+        android:inputType="textAutoComplete"
+        android:textSize="18sp" />
+
+</LinearLayout>
