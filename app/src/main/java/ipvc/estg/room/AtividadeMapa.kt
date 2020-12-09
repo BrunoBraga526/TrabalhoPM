@@ -52,10 +52,10 @@ class AtividadeMapa : AppCompatActivity(), OnMapReadyCallback {
                 if (response.isSuccessful) {
                     val c = response.body()!!
 
-                    for (note in c) {
-                        position = LatLng(note.latitude.toDouble(), note.longitude.toDouble())
-                        var marker = mMap.addMarker(MarkerOptions().position(position).title("${note.descricao}"))
-                        marker.tag = note.id
+                    for (problema in c) {
+                        position = LatLng(problema.latitude.toDouble(), problema.longitude.toDouble())
+                        var marcador = mMap.addMarker(MarkerOptions().position(position).title("${problema.descricao}"))
+                        marcador.tag = problema.id
                     }
                 }
             }

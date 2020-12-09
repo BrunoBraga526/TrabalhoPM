@@ -8,8 +8,8 @@
     <string name="shownoteslabel">Notes app</string>
     <string name="campo_utilizador_vazio">User field empty</string>
     <string name="campo_password_vazio">Password field empty</string>
-    <string name="logincorrectlabel">Successfull login</string>
-    <string name="loginincorrectlabel">Failed login</string>
+    <string name="login_correto">Successfull login</string>
+    <string name="login_incorreto">Failed login</string>
     <string name="empty_not_saved1">Edit empty, not saved</string>
     <string name="title_activity_atividade_mapa">Report Map</string>
     <string name="marcador_inserido">Marker inserted</string>

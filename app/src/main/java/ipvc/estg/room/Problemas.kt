@@ -36,9 +36,9 @@ class problema : AppCompatActivity() {
             val utilizador: String = sharedPref.getString(getString(R.string.keeper_loginauto_utilizador), null)!!
             var tipo=String()
             val intent = intent
-            val id = intent.getStringExtra(problema.EXTRA_MSG)
-            val latitude = intent.getStringExtra(problema.EXTRA_LAT)
-            val longitude = intent.getStringExtra(problema.EXTRA_LON)
+            val id = intent.getStringExtra(EXTRA_MSG)
+            val latitude = intent.getStringExtra(EXTRA_LAT)
+            val longitude = intent.getStringExtra(EXTRA_LON)
             val call_id= id?.toInt()
             val request = Servicos.buildServico(PostLogin::class.java)
             val call = request.getProblema(call_id!!)

@@ -23,26 +23,27 @@ class NovoMarcador : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.atividade_novomarcador)
-        var tipo = String();
+
         val sharedPref: SharedPreferences = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE)
         var utilizador:String? = sharedPref.getString("automatic_login_username", null)
+        var tipo = String();
         val latitude= intent.getStringExtra(EXTRA_LAT).toString()
         val longitude= intent.getStringExtra(EXTRA_LON).toString()
         createmarkerView = findViewById(R.id.marker_texto)
         val texto = createmarkerView.text
-        val types = resources.getStringArray(R.array.TiposProblema)
+        val tipos = resources.getStringArray(R.array.TiposProblema)
 
         val spinner = findViewById<Spinner>(R.id.dropdown_novo_marcador)
         if (spinner != null) {
             val adapter = ArrayAdapter(this,
-                android.R.layout.simple_spinner_item, types)
+                android.R.layout.simple_spinner_item, tipos)
             spinner.adapter = adapter
 
             spinner.onItemSelectedListener = object :
                 AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>,
                                             view: View, position: Int, id: Long) {
-                    tipo=types[position]
+                    tipo=tipos[position]
                 }
                 override fun onNothingSelected(parent: AdapterView<*>) {
                 }

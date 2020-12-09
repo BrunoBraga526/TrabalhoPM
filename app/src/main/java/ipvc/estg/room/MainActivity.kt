@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         val c: Output_Login = response.body()!!
                         if (c.sucesso) {
-                            Toast.makeText(this@MainActivity,R.string.logincorrectlabel,Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@MainActivity,R.string.login_correto,Toast.LENGTH_SHORT).show()
 
                             //keeper dos dados do utilizador caso este esteja logado para login automatico em shared preferences
                             val sharedPref: SharedPreferences = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE )
@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
                             val intent = Intent(this@MainActivity, AtividadeMapa::class.java)
                             startActivity(intent)
                             finish()
-                        } else Toast.makeText(this@MainActivity,R.string.loginincorrectlabel,Toast.LENGTH_SHORT).show()
+                        } else Toast.makeText(this@MainActivity,R.string.login_incorreto,Toast.LENGTH_SHORT).show()
                     }
                 }
                 override fun onFailure(call: Call<Output_Login>, t: Throwable) {
@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val c: Output_Login = response.body()!!
                     if (c.sucesso) {
-                        Toast.makeText(this@MainActivity,R.string.logincorrectlabel,Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@MainActivity,R.string.login_correto,Toast.LENGTH_SHORT).show()
                         val sharedPref: SharedPreferences = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE )
                         with ( sharedPref.edit() ) {
                             putBoolean(getString(R.string.keeper_loginauto_valida), true)
@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity() {
                         val intent = Intent(this@MainActivity, AtividadeMapa::class.java)
                         startActivity(intent)
                         finish()
-                    } else Toast.makeText(this@MainActivity,R.string.loginincorrectlabel,Toast.LENGTH_SHORT).show()
+                    } else Toast.makeText(this@MainActivity,R.string.login_incorreto,Toast.LENGTH_SHORT).show()
                 }
             }
             override fun onFailure(call: Call<Output_Login>, t: Throwable) {

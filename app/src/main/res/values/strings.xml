@@ -15,8 +15,8 @@
     <string name="shownoteslabel">APP NOTAS</string>
     <string name="campo_utilizador_vazio">Campo utilizador vazio</string>
     <string name="campo_password_vazio">Campo password vazio</string>
-    <string name="logincorrectlabel">Login com sucesso</string>
-    <string name="loginincorrectlabel">Login falhou</string>
+    <string name="login_correto">Login com sucesso</string>
+    <string name="login_incorreto">Login falhou</string>
     <string name="empty_not_saved1">Edição vazia, não gravado</string>
     <string name="title_activity_atividade_mapa">Mapa Reports</string>
     <string name="marcador_inserido">Marcador inserido</string>
@@ -28,6 +28,7 @@
     <string-array name="TiposProblema">
         <item>Acidente Grave</item>
         <item>Acidente Ligeiro</item>
+        <item>Buraco na Estrada</item>
         <item>Obras</item>
     </string-array>
 
