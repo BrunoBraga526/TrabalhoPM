@@ -13,24 +13,21 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
-
-
 class NovoMarcador : AppCompatActivity() {
 
-    private lateinit var createmarkerView: EditText
+    private lateinit var criarMarcadorView: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.atividade_novomarcador)
 
         val sharedPref: SharedPreferences = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE)
-        var utilizador:String? = sharedPref.getString("automatic_login_username", null)
+        val utilizador:String? = sharedPref.getString("keeper_loginauto_utilizador", null)
         var tipo = String();
         val latitude= intent.getStringExtra(EXTRA_LAT).toString()
         val longitude= intent.getStringExtra(EXTRA_LON).toString()
-        createmarkerView = findViewById(R.id.marker_texto)
-        val texto = createmarkerView.text
+        criarMarcadorView = findViewById(R.id.marker_texto)
+        val descricao = criarMarcadorView.text
         val tipos = resources.getStringArray(R.array.TiposProblema)
 
         val spinner = findViewById<Spinner>(R.id.dropdown_novo_marcador)
@@ -55,7 +52,7 @@ class NovoMarcador : AppCompatActivity() {
             val call = request.criarProblema(
                 utilizador.toString(),
                 tipo,
-                texto,
+                descricao,
                 latitude,
                 longitude
 
