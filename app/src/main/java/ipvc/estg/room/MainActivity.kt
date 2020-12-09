@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         val sharedPref: SharedPreferences = getSharedPreferences(
             getString(R.string.preference_file_key), Context.MODE_PRIVATE )
 
-        val loginauto_valida = sharedPref.getBoolean(getString(R.string.keeper_loginauto_valida), false)
+        val loginauto_valida = sharedPref.getBoolean(getString(R.string.automatic_login_check), false)
         Log.d("SP_AutoLoginCheck", "$loginauto_valida")
 
         if( loginauto_valida ) {
@@ -77,8 +77,8 @@ class MainActivity : AppCompatActivity() {
                             //keeper dos dados do utilizador caso este esteja logado para login automatico em shared preferences
                             val sharedPref: SharedPreferences = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE )
                             with ( sharedPref.edit() ) {
-                                putBoolean(getString(R.string.keeper_loginauto_valida), true)
-                                putString(getString(R.string.keeper_loginauto_utilizador), utilizador )
+                                putBoolean(getString(R.string.automatic_login_check), true)
+                                putString(getString(R.string.automatic_login_username), utilizador )
                                 commit()
                             }
                             val intent = Intent(this@MainActivity, AtividadeMapa::class.java)
@@ -128,8 +128,8 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this@MainActivity,R.string.login_correto,Toast.LENGTH_SHORT).show()
                         val sharedPref: SharedPreferences = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE )
                         with ( sharedPref.edit() ) {
-                            putBoolean(getString(R.string.keeper_loginauto_valida), true)
-                            putString(getString(R.string.keeper_loginauto_utilizador), utilizador )
+                            putBoolean(getString(R.string.automatic_login_check), true)
+                            putString(getString(R.string.automatic_login_username), utilizador )
                             //putString(getString(R.string.automatic_login_password), palavrapasse )
                             commit()
                         }

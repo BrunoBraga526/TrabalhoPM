@@ -20,6 +20,8 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.Marker
 import ipvc.estg.room.API_Login.PostLogin
 import ipvc.estg.room.entities.Problema
+import ipvc.estg.room.*
+import kotlinx.android.synthetic.main.atividade_problema_dono.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -54,7 +56,7 @@ class AtividadeMapa : AppCompatActivity(), OnMapReadyCallback {
 
                     for (problema in c) {
                         position = LatLng(problema.latitude.toDouble(), problema.longitude.toDouble())
-                        var marcador = mMap.addMarker(MarkerOptions().position(position).title("${problema.descricao}"))
+                        val marcador = mMap.addMarker(MarkerOptions().position(position).title("${problema.descricao}"))
                         marcador.tag = problema.id
                     }
                 }
@@ -81,11 +83,11 @@ class AtividadeMapa : AppCompatActivity(), OnMapReadyCallback {
         mMap.setOnMarkerClickListener( object: GoogleMap.OnMarkerClickListener {
             override fun onMarkerClick(p0: Marker): Boolean {
 
-                val intent = Intent(this@AtividadeMapa, problema::class.java)
+                val intent = Intent(this@AtividadeMapa, Problemas::class.java)
                 setUpMap()
-                intent.putExtra(problema.EXTRA_LAT, latitude)
-                intent.putExtra(problema.EXTRA_LON, longitude)
-                intent.putExtra(problema.EXTRA_MSG, p0.tag.toString())
+                intent.putExtra(Problemas.EXTRA_LATITUDE, latitude)
+                intent.putExtra(Problemas.EXTRA_LONGITUDE, longitude)
+                intent.putExtra(Problemas.EXTRA_MENSAGEM, p0.tag.toString())
                 startActivity(intent)
                 return false
             }
@@ -127,8 +129,8 @@ class AtividadeMapa : AppCompatActivity(), OnMapReadyCallback {
                 val sharedPref: SharedPreferences = getSharedPreferences(
                     getString(R.string.preference_file_key), Context.MODE_PRIVATE)
                 with(sharedPref.edit()) {
-                    putBoolean(getString(R.string.keeper_loginauto_valida), false)
-                    putString(getString(R.string.keeper_loginauto_utilizador), null)
+                    putBoolean(getString(R.string.automatic_login_check), false)
+                    putString(getString(R.string.automatic_login_username), null)
                     commit()
                 }
 

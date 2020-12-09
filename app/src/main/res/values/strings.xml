@@ -1,15 +1,13 @@
 <resources>
-    <string name="app_name">Primeira App</string>
+    <string name="app_name" translatable="false">Primeira App</string>
     <string name="add_nota">Adicionar nota</string>
     <string name="empty_not_saved">Escreva algo neste campo: não inserido</string>
     <string name="insertnota">Insira Nota</string>
     <string name="inserttexto">Insira Texto</string>
     <string name="preference_file_key" translatable="false">preference_file_key</string>
-    <string name="keeper_loginauto_valida" translatable="false">loginauto_valida</string>
     <string name="passwordlabel" translatable="false">Palavra-passe</string>
     <string name="usernamelabel" translatable="false">Utilizador</string>
-    <string name="keeper_loginauto_utilizador" translatable="false">keeper_loginauto_utilizador</string>
-    <string name="keeper_loginauto_palavrapasse" translatable="false">keeper_loginauto_palavrapasse</string>
+
     <string name="logoutlabel" translatable="false">Logout</string>
     <string name="loginlabel" translatable="false">Login</string>
     <string name="shownoteslabel">APP NOTAS</string>
@@ -24,6 +22,10 @@
     <string name="botao_guardar">Guardar</string>
     <string name="texto_marcador">Descrição</string>
     <string name="createuserlabel">Criar utilizador</string>
+    <string name="automatic_login_check" translatable="false">automatic_login_check</string>
+    <string name="automatic_login_username" translatable="false">automatic_login_username</string>
+    <string name="botao_apagar">APAGAR</string>
+
 
     <string-array name="TiposProblema">
         <item>Acidente Grave</item>

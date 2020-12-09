@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import ipvc.estg.room.*
+
 import ipvc.estg.room.API_Login.PostLogin
 import retrofit2.Call
 import retrofit2.Callback
@@ -22,8 +22,8 @@ class NovoMarcador : AppCompatActivity() {
         setContentView(R.layout.atividade_novomarcador)
 
         val sharedPref: SharedPreferences = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE)
-        val utilizador:String? = sharedPref.getString("keeper_loginauto_utilizador", null)
-        var tipo = String();
+        val utilizador:String? = sharedPref.getString("automatic_login_username", null)
+        var tipo = String()
         val latitude= intent.getStringExtra(EXTRA_LAT).toString()
         val longitude= intent.getStringExtra(EXTRA_LON).toString()
         criarMarcadorView = findViewById(R.id.marker_texto)

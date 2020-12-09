@@ -42,6 +42,7 @@
         <activity android:name=".UpdateNota" />
         <activity android:name=".AddNota" />
         <activity android:name=".NovoMarcador" />
+        <activity android:name=".Problemas" />
         <activity android:name=".Nota_MainActivity">
 
         </activity>

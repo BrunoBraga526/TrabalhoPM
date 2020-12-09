@@ -29,8 +29,7 @@ interface PostLogin {
 
     @FormUrlEncoded
     @POST("myslim/api/problema/editar")
-    fun editarProblema(@Field("id") id: Int?, @Field("tipo") tipo: String, @Field("descricao") descricao: String, @Field("latitude") latitude: String, @Field("longitude") longitude
-    : String): Call<Output_Problema>
+    fun editarProblema(@Field("id") id: Int?, @Field("tipo") tipo: String, @Field("descricao") descricao: String, @Field("latitude") latitude: String, @Field("longitude") longitude: String): Call<Output_Problema>
 
     @GET("myslim/api/problema/remover/{id}")
     fun removerProblema(@Path("id") id: Int?): Call<Output_Login>
